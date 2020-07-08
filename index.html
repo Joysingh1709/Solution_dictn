@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            margin: 10px;
+        }
         .btn{
             border: none;
             background-color: #8DEA6E;
@@ -13,6 +16,7 @@
             height: 30px;
             cursor: pointer;
             transition: 0.3s;
+            margin-left: 40%;
         }
         .btn:hover{
             border-style: solid;
@@ -24,6 +28,18 @@
             font-size: 1.8rem;
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
+
+        #inputVal{
+            height: 100px;
+            width: 30%;
+            float: left;
+        }
+
+        #outputVal{
+            height: 100px;
+            width: 30%;
+            margin-left: 25%;
+        }
     </style>
     <script src="index.js"></script>
 </head>
@@ -31,7 +47,16 @@
     <h2 class="text">Hello, Please click to show the console output</h2>
 
     <div>
-        <button class="btn" onclick="solution()">Click</button>
+        <textarea id="inputVal" placeholder="Enter Input values in JSON format">{'2019-01-10':10, '2019-01-11':20, '2019-01-13':10}</textarea>
     </div>
+
+    <div>
+        <textarea id="outputVal" placeholder="Output values" disabled></textarea>
+    </div>
+
+    <div>
+        <button class="btn" onclick="solution(document.getElementById('inputVal').value)">Click</button>
+    </div>
+    
 </body>
 </html>
